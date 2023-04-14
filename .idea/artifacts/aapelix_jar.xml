@@ -1,0 +1,9 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="aapelix:jar">
+    <output-path>$PROJECT_DIR$/out/artifacts/aapelix_jar</output-path>
+    <root id="archive" name="aapelix.jar">
+      <element id="module-output" name="aapelix" />
+      <element id="file-copy" path="$PROJECT_DIR$/src/main/resources/plugin.yml" />
+    </root>
+  </artifact>
+</component>
