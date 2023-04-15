@@ -41,4 +41,4 @@ commands:
     permission-message: Sinulla ei ole oikeuksia tähän komentoon!
   duel:
     description: Duel someone
-    usage: /duel <arg1>
+    usage: /duel <arg1> <arg2>

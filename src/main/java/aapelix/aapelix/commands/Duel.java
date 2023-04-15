@@ -24,7 +24,9 @@ public class Duel implements CommandExecutor, Listener {
         Player player = (Player) sender;
 
         if (args.length >= 1) {
+
             String potentialPlayer = args[0];
+            String acceptPlayer = args[1];
 
             if (Bukkit.getPlayerExact(potentialPlayer) == player) {
                 player.sendMessage(ChatColor.RED+("Et voi haastaa itseäsi"));
@@ -32,6 +34,7 @@ public class Duel implements CommandExecutor, Listener {
             }
 
             if (Bukkit.getPlayerExact(potentialPlayer) == null) {
+                player.sendMessage(ChatColor.RED+("Pelaajaa ei löydetty!"));
                 return true;
             }
 
@@ -39,8 +42,20 @@ public class Duel implements CommandExecutor, Listener {
 
             targetPlayer.sendMessage(ChatColor.GOLD +(player + " haastoi sinut kaksin taisteluun!"));
 
-            player.teleport(new Location(Bukkit.getWorld("overworld"), 145, 95, 263));
-            targetPlayer.teleport(new Location(Bukkit.getWorld("overworld"), 145, 95, 263));
+            if (potentialPlayer.equals("accept")) {
+
+                if (Bukkit.getPlayerExact(acceptPlayer) == null) {
+                    player.sendMessage(ChatColor.RED+("Pelaajaa ei löydetty!"));
+                    return true;
+                }
+
+                if (Bukkit.getPlayerExact(acceptPlayer) == player) {
+
+                    player.teleport(new Location(Bukkit.getWorld("overworld"), 145, 95, 263));
+                    targetPlayer.teleport(new Location(Bukkit.getWorld("overworld"), 145, 95, 263));
+
+                }
+            }
 
         } else {
             player.sendMessage(ChatColor.RED+("Käyttö: /duel <nimi>"));
