@@ -21,6 +21,7 @@ public final class Aapelix extends JavaPlugin {
         getCommand("fly").setExecutor(new Fly());
         getCommand("menu").setExecutor(new Menu(this));
         getCommand("duel").setExecutor(new Duel());
+        getCommand("title").setExecutor(new Title());
 
         new TorchHandler(this);
         new PlayerHandler(this);

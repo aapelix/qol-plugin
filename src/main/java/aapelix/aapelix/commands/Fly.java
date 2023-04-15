@@ -19,11 +19,10 @@ public class Fly implements CommandExecutor {
         if (player.getAllowFlight()) {
             player.setAllowFlight(false);
             player.sendMessage("Lento poistettu käytöstä!");
+            player.sendMessage(Bukkit.getOnlinePlayers().toString());
         } else {
             player.setAllowFlight(true);
             player.sendMessage("Lento otettu käyttöön!");
-            
-
         }
 
         return true;

@@ -42,3 +42,5 @@ commands:
   duel:
     description: Duel someone
     usage: /duel <arg1> <arg2>
+  title:
+    usage: /title <arg1> <arg2> <arg3>
