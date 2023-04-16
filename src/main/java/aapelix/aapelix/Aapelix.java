@@ -1,10 +1,8 @@
 package aapelix.aapelix;
 
 import aapelix.aapelix.commands.*;
-import aapelix.aapelix.handlers.PlayerHandler;
-import aapelix.aapelix.handlers.PvPHandler;
-import aapelix.aapelix.handlers.RightClick;
-import aapelix.aapelix.handlers.TorchHandler;
+import aapelix.aapelix.handlers.*;
+import aapelix.aapelix.minigames.*;
 import org.bukkit.Bukkit;
 import org.bukkit.plugin.java.JavaPlugin;
 
@@ -28,6 +26,8 @@ public final class Aapelix extends JavaPlugin {
         new PlayerHandler(this);
         new PvPHandler(this);
         new RightClick(this);
+        new parkour(this);
+        new Gyrowand(this);
 
     }
 
