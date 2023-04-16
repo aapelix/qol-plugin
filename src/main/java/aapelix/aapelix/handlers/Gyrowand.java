@@ -27,8 +27,9 @@ public class Gyrowand implements Listener {
 
         if (player.getInventory().getItemInMainHand().getType() == Material.BLAZE_ROD) {
 
-            Block block = player.getTargetBlock(null, 20);
+            Block block = player.getTargetBlock(null, 30);
             Location loc = block.getLocation();
+
             World world = player.getWorld();
 
             Entity armorstand = world.spawnEntity(loc, EntityType.ARMOR_STAND);
@@ -36,8 +37,10 @@ public class Gyrowand implements Listener {
             List<Entity> nearby =  armorstand.getNearbyEntities(5,5,5);
 
             for (Entity tmp: nearby) {
-                if (tmp instanceof Damageable) {
-                    tmp.teleport(loc);
+                if (!(tmp instanceof Player)) {
+                    if(tmp instanceof Damageable) {
+                        tmp.teleport(loc);
+                    }
                 }
             }
             armorstand.remove();
