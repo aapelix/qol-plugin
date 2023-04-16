@@ -4,7 +4,6 @@ import aapelix.aapelix.Aapelix;
 import org.bukkit.Bukkit;
 import org.bukkit.Location;
 import org.bukkit.Material;
-import org.bukkit.World;
 import org.bukkit.entity.Damageable;
 import org.bukkit.entity.Entity;
 import org.bukkit.event.EventHandler;
@@ -39,9 +38,7 @@ public class RightClick implements Listener {
                 if (tmp instanceof Damageable)
                     ((Damageable) tmp).damage(100);
 
-
-
-
+            player.setAbsorptionAmount(16);
         }
 
     }
