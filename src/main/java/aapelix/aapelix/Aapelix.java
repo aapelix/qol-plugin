@@ -2,7 +2,6 @@ package aapelix.aapelix;
 
 import aapelix.aapelix.commands.*;
 import aapelix.aapelix.handlers.*;
-import aapelix.aapelix.minigames.*;
 import org.bukkit.Bukkit;
 import org.bukkit.plugin.java.JavaPlugin;
 
@@ -10,7 +9,12 @@ public final class Aapelix extends JavaPlugin {
 
     @Override
     public void onEnable() {
-        Bukkit.getLogger().info("Aapelix's plugin: Started!");
+        Bukkit.getLogger().info("                            .__  .__        \n" +
+                "_____  _____  ______   ____ |  | |__|__  ___\n" +
+                "\\__  \\ \\__  \\ \\____ \\_/ __ \\|  | |  \\  \\/  / \n" +
+                " / __ \\_/ __ \\|  |_> >  ___/|  |_|  |>    <  \n" +
+                "(____  (____  /   __/ \\___  >____/__/__/\\_ \\ \n" +
+                "     \\/     \\/|__|        \\/              \\/");
 
 
         getCommand("gms").setExecutor(new Survival());
@@ -18,16 +22,16 @@ public final class Aapelix extends JavaPlugin {
         getCommand("gmsp").setExecutor(new Spectator());
         getCommand("gma").setExecutor(new Adventure());
         getCommand("fly").setExecutor(new Fly());
-        getCommand("menu").setExecutor(new Menu(this));
+        getCommand("pvp").setExecutor(new PvP());
         getCommand("duel").setExecutor(new Duel());
         getCommand("title").setExecutor(new Title());
+        getCommand("msg").setExecutor(new Msg());
+        getCommand("food").setExecutor(new Food());
 
-        new TorchHandler(this);
+
         new PlayerHandler(this);
         new PvPHandler(this);
-        new RightClick(this);
-        new parkour(this);
-        new Gyrowand(this);
+        //new Gyrowand(this);
 
     }
 

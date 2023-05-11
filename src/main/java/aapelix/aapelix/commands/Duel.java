@@ -14,7 +14,7 @@ public class Duel implements CommandExecutor, Listener {
     @Override
     public boolean onCommand(CommandSender sender, Command command, String label, String [] args) {
         if (!(sender instanceof Player)) {
-            sender.sendMessage("Miks yrität tehdä tätä consolessa?");
+            sender.sendMessage("Why are you trying to do this in console?");
             return true;
         }
 
@@ -26,23 +26,23 @@ public class Duel implements CommandExecutor, Listener {
             String acceptPlayer = args[1];
 
             if (Bukkit.getPlayerExact(potentialPlayer) == player) {
-                player.sendMessage(ChatColor.RED+("Et voi haastaa itseäsi"));
+                player.sendMessage(ChatColor.RED+("You cannot duel yourself"));
                 return true;
             }
 
             if (Bukkit.getPlayerExact(potentialPlayer) == null) {
-                player.sendMessage(ChatColor.RED+("Pelaajaa ei löydetty!"));
+                player.sendMessage(ChatColor.RED+("Player not found!"));
                 return true;
             }
 
             Player targetPlayer = Bukkit.getServer().getPlayer(potentialPlayer);
 
-            targetPlayer.sendMessage(ChatColor.GOLD +(player + " haastoi sinut kaksin taisteluun!"));
+            targetPlayer.sendMessage(ChatColor.GOLD +(player + " dueled you!"));
 
             if (potentialPlayer.equals("accept")) {
 
                 if (Bukkit.getPlayerExact(acceptPlayer) == null) {
-                    player.sendMessage(ChatColor.RED+("Pelaajaa ei löydetty!"));
+                    player.sendMessage(ChatColor.RED+("Player now found!"));
                     return true;
                 }
 

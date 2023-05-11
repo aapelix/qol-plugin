@@ -1,6 +1,8 @@
 package aapelix.aapelix.commands;
 
 import org.bukkit.Bukkit;
+import org.bukkit.ChatColor;
+import org.bukkit.Color;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
@@ -10,7 +12,7 @@ public class Fly implements CommandExecutor {
     @Override
     public boolean onCommand(CommandSender sender, Command command, String label, String [] args) {
         if (!(sender instanceof Player)) {
-            sender.sendMessage("Miks yrität tehdä tätä consolessa?");
+            sender.sendMessage("Why are you trying to do this in console?");
             return true;
         }
 
@@ -18,11 +20,10 @@ public class Fly implements CommandExecutor {
 
         if (player.getAllowFlight()) {
             player.setAllowFlight(false);
-            player.sendMessage("Lento poistettu käytöstä!");
-            player.sendMessage(Bukkit.getOnlinePlayers().toString());
+            player.sendMessage(ChatColor.RED + "Fly is now disabled!");
         } else {
             player.setAllowFlight(true);
-            player.sendMessage("Lento otettu käyttöön!");
+            player.sendMessage(ChatColor.GREEN + "Fly is now enabled!");
         }
 
         return true;

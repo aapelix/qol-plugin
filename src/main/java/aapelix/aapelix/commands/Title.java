@@ -7,6 +7,8 @@ import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 
+import java.util.Objects;
+
 public class Title implements CommandExecutor {
     @Override
     public boolean onCommand(CommandSender sender, Command command, String label, String [] args) {
@@ -19,14 +21,14 @@ public class Title implements CommandExecutor {
             String title = args[1];
             String subtitle = args[2];
 
-            if (titlePlayer == "all") {
+            if (Objects.equals(titlePlayer, "all")) {
                 for (Player pelaajat : Bukkit.getOnlinePlayers()) {
                     pelaajat.sendTitle(title, subtitle);
                 }
             }
 
             if (Bukkit.getPlayerExact(titlePlayer) == null) {
-                player.sendMessage(ChatColor.RED + ("Pelaajaa ei löydetty!"));
+                player.sendMessage(ChatColor.RED + "Pelaajaa ei löydetty!");
                 return true;
             }
 

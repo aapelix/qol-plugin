@@ -11,6 +11,8 @@ import org.bukkit.event.entity.EntityDamageByEntityEvent;
 
 
 public class PvPHandler implements Listener {
+    public static boolean isPvPEnabled;
+
     public PvPHandler(Aapelix plugin) {
         Bukkit.getPluginManager().registerEvents(this, plugin);
     }
@@ -19,18 +21,9 @@ public class PvPHandler implements Listener {
     @EventHandler
     public void onEntityDamage(EntityDamageByEntityEvent event) {
 
-        if (event.getDamager() instanceof Player && event.getEntity() instanceof Player) {
+        if (event.getDamager() instanceof Player && event.getEntity() instanceof Player && isPvPEnabled) {
 
-            Player attacker = (Player) event.getDamager();
-
-            if (attacker.getInventory().getItemInMainHand().getType() == Material.DIAMOND_SWORD) {
-
-                Player victim = (Player) event.getEntity();
-
-                event.setCancelled(true);
-
-                Bukkit.broadcastMessage(attacker.getName() + " hit " + victim.getName() + " with a diamond sword and the event was cancelled!");
-            }
+            event.setCancelled(true);
 
         }
 

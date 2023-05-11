@@ -4,43 +4,42 @@ main: aapelix.aapelix.Aapelix
 api-version: 1.19
 commands:
   fly:
-    description: Anna fly pelaajalle
     usage: /fly
     aliases: [f, togglefly, lento]
     permission: fly
-    permission-message: Sinulla ei ole oikeuksia tähän komentoon!
-  menu:
-    description: Valitse pelimuoto
-    usage: /pelimuodot
-    aliases: [valikko, menu, games]
-    permission: pelimuotovalikko
-    permission-message: Sinulla ei ole oikeuksia tähän komentoon!
   survival:
     description: Gamemode Survival
     usage: /gms
     aliases: [gms]
     permission: gms
-    permission-message: Sinulla ei ole oikeuksia tähän komentoon!
   creative:
     description: Gamemode Creative
     usage: /gmc
     aliases: [ gmc ]
     permission: gmc
-    permission-message: Sinulla ei ole oikeuksia tähän komentoon!
   spectator:
     description: Gamemode Spectator
     usage: /gmsp
     aliases: [ gmsp ]
     permission: gmsp
-    permission-message: Sinulla ei ole oikeuksia tähän komentoon!
   adventure:
     description: Gamemode Adventure
     usage: /gma
     aliases: [ gma ]
     permission: gma
-    permission-message: Sinulla ei ole oikeuksia tähän komentoon!
   duel:
     description: Duel someone
     usage: /duel <arg1> <arg2>
   title:
     usage: /title <arg1> <arg2> <arg3>
+  pvp:
+    usage: /pvp
+    aliases: [ enablepvp ]
+    permission: enablepvp
+  msg:
+    usage: /msg <arg1>
+    aliases: [ message ]
+  food:
+    usage: /food
+    aliases: [ infinitefood, ifood ]
+
